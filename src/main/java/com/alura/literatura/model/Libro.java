@@ -1,12 +1,27 @@
 package com.alura.literatura.model;
 
+import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "libros")
 public class Libro {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(unique = true)
     private String titulo;
+    @ManyToOne
     private Autor autor;
     private String idiomas;
-    private int numeroDeDescargas;
+    private Integer numeroDeDescargas;
 
     // Getters and Setters
 
@@ -51,7 +66,7 @@ public class Libro {
         return "*** Libro ***\n" +
         "Titulo: " + titulo + "\n" +
         "Autor: " + autor.getNombre() + "\n" +
-        "Idiomas: " + idiomas + "\n" + 
+        "Idioma: " + idiomas + "\n" + 
         "Numero de descargas: " + numeroDeDescargas + "\n";
     }
     
