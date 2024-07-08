@@ -22,4 +22,4 @@ Este proyecto permite interactuar con una base de datos de libros y autores, pro
 1. Clonar el repositorio:
    ```bash
    git clone https://github.com/usuario/proyecto-literatura.git
-   cd proyecto-literatura
+   cd desafio-literatura
